@@ -1,0 +1,113 @@
+<div id="container">
+  <div class="box">
+    <div class="col-12 shadow-lg border p-4 rounded">
+      <div class="row">
+        <div class="col-12">
+          <img
+            src="https://raw.githubusercontent.com/Coyaks/login_material_design/master/img/skoy_color.png"
+            width="20%"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h4 class="text-center">Inscription</h4>
+          <alert></alert>
+        </div>
+      </div>
+      <div class="row">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <div class="col-12">
+            <mat-form-field>
+              <input
+                matInput
+                formControlName="firstName"
+                placeholder="Nom"
+                [ngClass]="{ 'is-invalid': submitted && f['firstName'].errors }"
+              />
+              <div
+                *ngIf="submitted && f['firstName'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['firstName'].errors['required']">Nom is required</div>
+              </div>
+            </mat-form-field>
+          </div>
+          <div class="col-12">
+            <mat-form-field>
+              <input
+                matInput
+                formControlName="lastName"
+                placeholder="Prénom"
+                [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }"
+              />
+              <div
+                *ngIf="submitted && f['lastName'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['lastName'].errors['required']">Prénom is required</div>
+              </div>
+            </mat-form-field>
+          </div>
+          <div class="col-12">
+            <mat-form-field>
+              <input
+                matInput
+                formControlName="username"
+                placeholder="Username"
+                [ngClass]="{ 'is-invalid': submitted && f['username'].errors }"
+              />
+              <div
+                *ngIf="submitted && f['username'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['username'].errors['required']">
+                  Username is required
+                </div>
+              </div>
+            </mat-form-field>
+          </div>
+          <div class="col-12">
+            <mat-form-field>
+              <input
+                matInput
+                type="password"
+                formControlName="password"
+                placeholder="Mot de passe"
+                [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+              />
+              <div
+                *ngIf="submitted && f['password'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['password'].errors['required']">
+                  Mot de passe is required
+                </div>
+                <div *ngIf="f['password'].errors['minlength']">
+                  Mot de passe doit être superieur à 6 caractèrs
+                </div>
+              </div>
+            </mat-form-field>
+          </div>
+          <div class="col-12">
+            <mat-card-actions>
+              <div class="button-flex-container">
+                <button
+                  mat-raised-button
+                  color="primary"
+                  [disabled]="loading"
+                  class="btn btn-primary"
+                >
+                  <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1" ></span>
+                  Inscription
+                </button>
+                <a routerLink="/login" class="btn btn-link">Annuler</a>
+              </div>
+            </mat-card-actions>
+          </div>
+        </form>
+        <div class="col-12"></div>
+      </div>
+    </div>
+  </div>
+</div>

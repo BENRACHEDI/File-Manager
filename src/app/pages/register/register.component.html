@@ -1,0 +1,77 @@
+
+<body class="hold-transition register-page">
+<div class="register-box">
+  <div class="card card-outline card-primary">
+    <div class="card-header text-center">
+      <a href="../../index2.html" class="h3"><b>Gestion des Documents</b></a>
+    </div>
+    <div class="card-body">
+      <p class="login-box-msg">Créer un nouveau compte</p>
+
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="input-group mb-3">
+          <input type="text" formControlName="firstName" class="form-control" placeholder="firstName">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" formControlName="lastName" class="form-control" placeholder="lastName">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="email" formControlName="username" class="form-control" placeholder="username">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" formControlName="password" class="form-control" placeholder="Mot de passe">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <!-- /.col -->
+          <div class="col-8 mb-3">
+            <button type="submit" class="btn btn-primary btn-block">Créer un compte</button>
+          </div>
+          <!-- /.col -->
+        </div>
+        <div class="row justify-content-center">
+          <!-- /.col -->
+          <div class="col-3 mb-3 ">
+            <div>__ Ou __</div>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+
+      <div class="social-auth-links text-center">
+        <a href="#" class="btn btn-block btn-primary">
+          <i class="fab fa-facebook mr-2"></i>
+          Inscription avec Facebook
+        </a>
+        <a href="#" class="btn btn-block btn-danger">
+          <i class="fab fa-google-plus mr-2"></i>
+          Inscription avec Google+
+        </a>
+      </div>
+
+      <a href="login.html" class="text-center">J'ai déja un compte</a>
+    </div>
+    <!-- /.form-box -->
+  </div><!-- /.card -->
+</div>
+<!-- /.register-box -->
+</body>
